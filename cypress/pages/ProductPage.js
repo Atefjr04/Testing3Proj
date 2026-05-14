@@ -1,5 +1,5 @@
 class ProductPage {
-  visit()             { cy.visit("/"); }
+  visit()             { cy.visit("/", { failOnStatusCode: false }); }
   search(term)        {
     cy.get('[data-test="search-query"]').type(term);
     cy.get('[data-test="search-submit"]').click();

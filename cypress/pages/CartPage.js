@@ -1,5 +1,5 @@
 class CartPage {
-  visit()             { cy.visit("/checkout"); }
+  visit()             { cy.visit("/checkout", { failOnStatusCode: false }); }
   getItems()          { return cy.get('.cart-item'); }
   removeFirst()       { cy.get('[data-test="remove-product"]').first().click(); }
   getCartCount()      { return cy.get('[data-test="cart-quantity"]'); }

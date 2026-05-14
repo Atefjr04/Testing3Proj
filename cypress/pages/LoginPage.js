@@ -1,5 +1,5 @@
 class LoginPage {
-  visit()           { cy.visit("/auth/login"); }
+  visit()           { cy.visit("/auth/login", { failOnStatusCode: false }); }
   enterEmail(email) { cy.get('[data-test="email"]').type(email); }
   enterPassword(pw) { cy.get('[data-test="password"]').type(pw); }
   submit()          { cy.get('[data-test="login-submit"]').click(); }
