@@ -1,0 +1,9 @@
+{
+  "validEmail": "customer@practicesoftwaretesting.com",
+  "validPassword": "welcome01",
+  "wrongPassword": "wrongpass123",
+  "firstName": "John",
+  "lastName": "Doe",
+  "newEmail": "newuser9999@example.com",
+  "newPassword": "Test@12345"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "testing3proj",
+  "version": "1.0.0",
+    "scripts": {
+    "test": "cypress run",
+    "test:open": "cypress open"
+  },
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "...",
+    "@bahmutov/cypress-esbuild-preprocessor": "...",
+    "cypress": "..."
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": "cypress/e2e/step_definitions/**/*.js"
+  }
+}
