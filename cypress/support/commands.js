@@ -1,9 +1,7 @@
-import user from '../fixtures/user.json'
-
 Cypress.Commands.add("login", () => {
   cy.visit("/auth/login");
-  cy.get('[data-test="email"]').type(user.validEmail);
-  cy.get('[data-test="password"]').type(user.validPassword);
+  cy.get('[data-test="email"]').type("customer@practicesoftwaretesting.com");
+  cy.get('[data-test="password"]').type("welcome01");
   cy.get('[data-test="login-submit"]').click();
 });
 
