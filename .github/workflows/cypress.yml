@@ -25,6 +25,13 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
+          headed: false
+        env:
+          CYPRESS_CHROME_WEB_SECURITY: "false"
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
           config: "pageLoadTimeout=60000,defaultCommandTimeout=10000"
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}

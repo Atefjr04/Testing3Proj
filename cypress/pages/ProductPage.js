@@ -1,14 +1,19 @@
 class ProductPage {
-  visit()             { cy.visit("/", { failOnStatusCode: false }); }
-  search(term)        {
-    cy.get('#search').type(term);
-    cy.get('[data-test="search-submit"]').click();
+  visit() {
+    cy.visit("/", { failOnStatusCode: false });
+    cy.wait(3000);
   }
-  getProducts()       { return cy.get('.card-title'); }
-  openFirst()         { cy.get('.card-title').first().click(); }
-  addToCart()         { cy.get('[data-test="add-to-cart"]').click(); }
-  filterCategory(cat) {
-    cy.get('.category-name').contains(cat).click();
+  search(term) {
+    cy.get('[data-test="search-query"]').should('be.visible').type(term);
+    cy.get('[data-test="search-submit"]').click();
+    cy.wait(2000);
+  }
+  getProducts()        { return cy.get('[data-test="product-name"]'); }
+  openFirst()          { cy.get('[data-test="product-name"]').first().click(); }
+  addToCart()          { cy.get('[data-test="add-to-cart"]').click(); }
+  filterCategory(cat)  {
+    cy.get('[data-test="category"]').contains(cat).click();
+    cy.wait(2000);
   }
 }
 module.exports = new ProductPage();

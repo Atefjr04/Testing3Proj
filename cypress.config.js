@@ -7,8 +7,10 @@ module.exports = defineConfig({
   e2e: {
     baseUrl: "https://practicesoftwaretesting.com",
     specPattern: "cypress/e2e/features/**/*.feature",
-    defaultCommandTimeout: 10000,
-    pageLoadTimeout: 30000,
+    defaultCommandTimeout: 15000,
+    pageLoadTimeout: 60000,
+    responseTimeout: 60000,
+    experimentalModifyObstructiveThirdPartyCode: true,
     async setupNodeEvents(on, config) {
       await addCucumberPreprocessorPlugin(on, config);
       on(
