@@ -1,14 +1,15 @@
 {
   "name": "testing3proj",
   "version": "1.0.0",
-    "scripts": {
+  "description": "Cypress BDD Testing Project",
+  "scripts": {
     "test": "cypress run",
     "test:open": "cypress open"
   },
   "devDependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "...",
-    "@bahmutov/cypress-esbuild-preprocessor": "...",
-    "cypress": "..."
+    "@badeball/cypress-cucumber-preprocessor": "^24.0.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
+    "cypress": "^15.15.0"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": false,
