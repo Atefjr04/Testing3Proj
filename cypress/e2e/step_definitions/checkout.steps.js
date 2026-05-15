@@ -39,9 +39,12 @@ When("they fill and submit the contact form", () => {
   cy.get('#first_name').should('be.visible').type("John");
   cy.get('#last_name').type("Doe");
   cy.get('#email').type("john@example.com");
-  cy.get('select[data-test="subject"]').then($el => {
-    if ($el.length) cy.wrap($el).select(0);
-  });
+  cy.get('select[data-test="subject"] option:not([disabled])')
+    .first()
+    .then(($option) => {
+      const value = $option.val();
+      cy.get('select[data-test="subject"]').select(value);
+    });
   cy.get('#message').type("This is a test message for the contact form.");
   cy.get('[data-test="contact-submit"]').click();
   cy.wait(2000);
