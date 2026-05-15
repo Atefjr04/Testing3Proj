@@ -8,4 +8,4 @@ Feature: Checkout and Contact
   Scenario: Submit contact form
     Given the user is on the contact page
     When they fill and submit the contact form
-    Then a contact success message should appear
+    Then a contact success message should appear 
