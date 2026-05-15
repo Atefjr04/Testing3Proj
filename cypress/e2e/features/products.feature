@@ -13,3 +13,9 @@ Feature: Product Browsing
     Given the user visits the homepage
     When they filter by "Hand Tools"
     Then filtered products should be displayed
+
+
+
+    Scenario: Homepage has correct title
+    Given the user visits the homepage
+    Then the page title should contain "Practice"

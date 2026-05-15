@@ -37,3 +37,8 @@ Then("filtered products should be displayed", () => {
 Then("the product detail page should be shown", () => {
   cy.url().should("include", "/product");
 });
+
+
+Then("the page title should contain {string}", (text) => {
+  cy.title().should("include", text);
+});
